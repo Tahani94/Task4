@@ -1,0 +1,10 @@
+<div>
+  <h2>Question {{ currentQuestionIndex + 1 }}</h2>
+  <p>{{ questions[currentQuestionIndex].text }}</p>
+  <div *ngFor="let option of questions[currentQuestionIndex].options">
+    <label>
+      <input type="radio" [(ngModel)]="selectedOption" [value]="option">{{ option }}
+    </label>
+  </div>
+  <button [disabled]="selectedOption === undefined" (click)="nextQuestion()">Next</button>
+</div>
